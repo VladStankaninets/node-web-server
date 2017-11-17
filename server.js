@@ -19,10 +19,10 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use((req, res, next) => {
-    res.render('maintenance.hbs');
-    // NOTE: next() is not used to stop execution off all the code below - We are in Maintenance mode
-});
+// app.use((req, res, next) => {
+//     res.render('maintenance.hbs');
+//     // NOTE: next() is not used to stop execution off all the code below - We are in Maintenance mode
+// });
 
 app.use(express.static(`${__dirname}/public`));
 

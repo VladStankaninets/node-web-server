@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000;
 
 var app = express();
 
@@ -65,6 +66,6 @@ app.get('/about', (req, res) => {
     // using handlebars (hbs) rendering template in views folder
 });
 
-app.listen(3000, () => {
-    console.log('The server is started on port 3000');
+app.listen(port, () => {
+    console.log(`The server is started on port ${port}`);
 });

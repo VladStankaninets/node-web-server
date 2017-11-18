@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
     // res.send('About page');
     res.render('home.hbs', {
         // enjecting data into home.hbs template
-        'pageTitle': 'My Home Page',
+        'pageTitle': 'My Home Page - Now on Heroku!',
         'welcomeMessage': 'My Dear Friend'
         // 'currentYear': new Date().getFullYear() - no need anymore using hbs helpers hbs.registerHelper
     });

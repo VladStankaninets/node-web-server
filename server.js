@@ -1,4 +1,5 @@
 const express = require('express');
+const device = require('express-device');
 const hbs = require('hbs');
 const fs = require('fs');
 const port = process.env.PORT || 3000;
@@ -19,6 +20,8 @@ app.use((req, res, next) => {
 
     next();
 });
+
+app.use(device.capture());
 
 // app.use((req, res, next) => {
 //     res.render('maintenance.hbs');
@@ -50,6 +53,7 @@ app.get('/', (req, res) => {
     res.render('home.hbs', {
         // enjecting data into home.hbs template
         'pageTitle': 'My Home Page - Now on Heroku!',
+        'deviceType': req.device.type,
         'welcomeMessage': 'My Dear Friend'
         // 'currentYear': new Date().getFullYear() - no need anymore using hbs helpers hbs.registerHelper
     });

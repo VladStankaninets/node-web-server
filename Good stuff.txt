@@ -1,0 +1,36 @@
+
+mklink /J C:\Users\lc5597983\Link2TF "C:\Users\lc5597983\OneDrive - FIS\Documents\TF-PROJECTS"
+=================================================================================================
+type filename (like cat)
+type nul >> filename (like touch, prserve content)
+=================================================================================================
+
+C:\Users\lc5597983>git config --global push.default
+
+C:\Users\lc5597983>git config --global push.default current
+
+C:\Users\lc5597983>git config --global push.default
+current
+====================================================================================================
+doskey /history or F7
+====================================================================================================
+Push Branch to Another Branch
+git push <remote> <local_branch>:<remote_name>
+git push origin my-feature:feature
+
+In order to push your branch to another branch, you may need to merge the remote branch to your current local branch.
+In order to be merged, the tip of the remote branch cannot be behind the branch you are trying to push.
+Before pushing, make sure to pull the changes from the remote branch and integrate them with your current local branch.
+$ git pull
+$ git checkout my-feature
+$ git merge origin/feature
+$ git push origin my-feature:feature
+=======================================================================================================================
+The simple answer is that HEAD is a pointer/label to the most recent commit of the branch you are currently on. 
+master is the default branch created when you initialized a git repository (e.g. git init).
+You can delete the master branch (e.g. git branch -D master). You cannot delete the HEAD pointer.
+
+On your own repository you can check where the HEAD is pointing to by running this:
+$ git symbolic-ref HEAD
+refs/heads/master
+=========================================================================================================================
